@@ -1,13 +1,14 @@
 import java.util.*;
 
-/**
- * Created by Ryan on 10/25/2016.
- */
 public class LongestPalindrome {
     public static String longestPalindrome(String s) {
         String maxLengthPal = "";
         String curLongestPal;
 
+        /**
+         * Iterate through the string, finding the max length palindrome centered around every
+         * individual index and every pair of adjacent indices
+          */
         for (int index = 0; index < s.length(); index++) {
             if ((curLongestPal = longestCenteredPal(s, index, false)).length() > maxLengthPal.length()) {
                 maxLengthPal = curLongestPal;
